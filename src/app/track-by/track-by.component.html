@@ -1,0 +1,19 @@
+<div>TRACK BY</div>
+
+<div>
+  <span>Array length:</span>
+  <input type="number" placeholder="Array length" [(ngModel)]="arraySize">
+  <button (click)="generateArray()">Generate</button>
+  <button (click)="clearArray()">Clear</button>
+</div>
+
+<div>
+  <input type="number" placeholder="Array length" [(ngModel)]="newArraySize">
+  <button (click)="addToArray()">Add to array</button>
+</div>
+
+<ul>
+  <li *ngFor="let item of someComplexArray;trackBy: trackByFn;index as i">
+    <span>{{item.id}} {{item.name}}</span> <button (click)="deleteItem(i)">DELETE</button>
+  </li>
+</ul>
