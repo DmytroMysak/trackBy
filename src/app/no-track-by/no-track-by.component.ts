@@ -28,8 +28,9 @@ export class NoTrackByComponent implements OnInit, OnDestroy {
     while (i <= this.newArraySize) {
       newArray.push({ id: i++ * 500, name: `abc-${Math.random().toFixed(5)}-${i}` });
     }
-    this.someComplexArray.push(...newArray);
-    this.someComplexArray.unshift(...newArray);
+    this.someComplexArray = [...newArray, ...this.someComplexArray, ...newArray];
+    // this.someComplexArray.push(...newArray);
+    // this.someComplexArray.unshift(...newArray);
   }
 
   deleteItem(index) {
